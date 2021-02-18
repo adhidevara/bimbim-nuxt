@@ -80,6 +80,6 @@ export default {
 
   server: {
     host: '185.210.144.176',
-    port: 8000 // default: 3000
+    port: 80 // default: 3000
   }
 }
