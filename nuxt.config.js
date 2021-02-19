@@ -46,7 +46,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // baseURL: '185.210.144.176/backend/api'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -80,6 +82,6 @@ export default {
 
   server: {
     host: '0',
-    port: 443 // default: 3000
+    port: 3000 // default: 3000
   }
 }
