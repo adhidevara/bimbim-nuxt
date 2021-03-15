@@ -3,7 +3,11 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: {
+    content: [
+      'node_modules/tv-*/dist/tv-*.umd.min.js',
+    ],
+  },
   theme: {
     extend: {
       fontFamily: {
@@ -11,25 +15,24 @@ module.exports = {
       }
     },
     screens: {
-      'xs': '240px',
-      // => @media (min-width: 240px) { ... }
-
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
+      'xs': '222px',
+      'sm': '425px',
       'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
       'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+      'xl': '1440px',
+      '2xl': '2560px',
     }
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    opacity: ({ after }) => after(['disabled']),
+    extend: {
+      opacity: ['disabled'],
+      translate: ['motion-reduce'],
+      backgroundColor: ['checked'],
+      borderColor: ['checked'],
+    }
+  },
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 }
