@@ -107,7 +107,8 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: `${process.env.BASE_URL}/bimapi`,
+        // url: `${process.env.BASE_URL}/bimapi`,
+        url: `${process.env.BASE_URL}`,
         endpoints: {
           login: {
             url: '/api/user/login'
