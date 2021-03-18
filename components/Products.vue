@@ -9,14 +9,14 @@
 
     <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
 
-      <div class="my-1 px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1 xl:w-1/4">
+      <nuxt-link to="/bimguru" class="my-1 px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1 xl:w-1/4">
         <div class="mx-auto bg-white shadow-md p-4 border-2 rounded-lg lg:max-w-full md:w-56 sm:w-48 hover:bg-gray-100 hover:shadow-xl cursor-pointer">
           <img class="w-40 mx-auto" data-src="https://dl.dropboxusercontent.com/s/rj1fe8gw7dbuula/n-bgr.png?dl=0" alt="" title="" v-lazy-load>
           <h1 class="text-teal-700 text-center">
             <span class="font-bold xs:text-lg sm:text-2xl md:text-2xl lg:text-2xl">BimGuru</span>
           </h1>
         </div>
-      </div>
+      </nuxt-link>
 
       <div class="my-1 px-1 w-1/2 overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1 xl:w-1/4">
         <div class="mx-auto bg-white shadow-md p-4 border-2 rounded-lg lg:max-w-full md:w-56 sm:w-48 hover:bg-gray-100 hover:shadow-xl cursor-pointer">
