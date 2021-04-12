@@ -21,12 +21,19 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
+    "nuxt-clipboard2": "^0.2.1",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-lazy-load": "^1.2.5",
     "nuxt-tailvue": "^1.0.68",
     "vee-validate": "3.0.0",
+    "vue-ctk-date-time-picker": "^2.5.0",
+    "vue-form-wizard": "^0.8.4",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-observe-visibility": "^1.0.0",
     "vue-select": "^3.11.2",
-    "vue-slick-carousel": "^1.0.6"
+    "vue-slick-carousel": "^1.0.6",
+    "vue-social-sharing": "^3.0.7",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",

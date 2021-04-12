@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TitleBar/>
-    <Nuxt/>
+    <Nuxt class="select-none"/>
     <Footer/>
   </div>
 </template>

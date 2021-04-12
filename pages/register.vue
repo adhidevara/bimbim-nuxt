@@ -38,14 +38,14 @@
                   <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
                     <ValidationProvider mode="aggressive" rules="required|confirmed:password|minmax:6,12" v-slot="{ errors }">
-                    <input type="password" v-model="register.password" id="password" placeholder="•••" ref="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }"/>
+                    <input type="password" v-model="register.password" id="password" autocomplete="on" placeholder="•••" ref="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }"/>
                     <span class="text-red-600 text-sm">{{ errors[0] }}</span>
                     </ValidationProvider>
                   </div>
                   <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Ulangi Password</label>
                     <ValidationProvider name="password" vid="password" mode="aggressive" rules="required|minmax:6,12" v-slot="{ errors }">
-                    <input type="password" v-model="register.c_password" id="c_password" placeholder="•••" ref="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }"/>
+                    <input type="password" v-model="register.c_password" id="c_password" autocomplete="on" placeholder="•••" ref="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }"/>
                     <span class="text-red-600 text-sm">{{ errors[0] }}</span>
                     </ValidationProvider>
                   </div>

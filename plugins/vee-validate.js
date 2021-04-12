@@ -1,6 +1,21 @@
 import Vue from 'vue'
 import { extend } from "vee-validate";
-import { required, alpha, numeric, email, confirmed } from "vee-validate/dist/rules";
+import { required, alpha, numeric, email, confirmed, regex } from "vee-validate/dist/rules";
+
+// extend('regex', {
+//   validate(value, { regex }) {
+//     return regex.test(value) == true
+//   },
+//   params: ['regex'],
+//   message: (fieldName, placeholders) => {
+//     return `Format tidak sesuai`;
+//   }
+// });
+
+extend('regex', {
+  ...regex,
+  message: "Format tidak sesuai"
+})
 
 extend("required", {
   ...required,

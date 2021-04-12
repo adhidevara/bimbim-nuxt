@@ -1,10 +1,26 @@
 <template>
   <nav class="bg-white shadow-lg">
+    <modal name="modal-logout" :adaptive="true" height="auto" width="500" :scrollable="true" @before-open="beforeOpen" @before-close="beforeClose">
+      <div class="px-5 py-3 border-teal-700 border-t-8 border-l-8 border-r-8">
+        <font-awesome-icon class="text-teal-700 mx-auto" :icon="['fas', 'sign-out-alt']"/>
+        <div class="text-center font-sans mx-auto">
+          <h1 class="text-teal-700 -mt-5">
+            <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Keluar </span>
+            <span class="font-extrabold text-5xl xs:text-4xl">Akun?</span>
+          </h1>
+        </div>
+        <p v-if="$auth.loggedIn" class="font-semibold text-xl text-teal-700 text-center">{{ $auth.user.nama }} yakin ingin keluar dari akun anda?</p>
+      </div>
+      <div class="flex">
+      <button @click="loggingOut" class="text-center w-1/2 text-white bg-red-700 hover:bg-red-800 p-3"><font-awesome-icon class="text-white mx-auto" :icon="['fas', 'sign-out-alt']"/> Keluar</button>
+      <button @click="hide('modal-logout')" class="text-center w-1/2 text-white bg-teal-700 hover:bg-teal-800 p-3">Tetap Disini</button>
+      </div>
+    </modal>
     <div class="xl:mx-64 px-4">
       <div class="flex items-center justify-between">
         <!-- Header logo -->
         <div>
-          <nuxt-link to="/"><img class="w-32 p-2" data-src="https://dl.dropboxusercontent.com/s/gytkaemepw3q0tr/locmain.png?dl=0" alt="logo" title="bimbim-logo" v-lazy-load></nuxt-link>
+          <nuxt-link to="/"><img class="w-32 p-2" src="https://dl.dropboxusercontent.com/s/gytkaemepw3q0tr/locmain.png?dl=0" alt="logo" title="bimbim-logo" data-not-lazy></nuxt-link>
         </div>
         <!-- Mobile toggle -->
         <div class="md:hidden pr-3">
@@ -170,25 +186,21 @@ export default {
     },
     logout(){
       this.isOpen = false
-      this.$modal.show({
-        type: 'warning',
-        title: "Logout?",
-        body: "Anda yakin ingin Logout dari akun anda?",
-        primary: {
-          label: "Tetap Disini",
-          theme: 'indigo-light',
-          action: () => console.log()
-        },
-        secondary: {
-          label: 'Logout',
-          theme: 'red',
-          action: () => this.loggingOut()
-        },
-      })
+      this.$modal.show('modal-logout')
+    },
+    hide(modal) {
+      this.$modal.hide(modal)
+    },
+    beforeOpen (event) {
+      console.log('Opening...')
+    },
+    beforeClose (event) {
+      console.log('Closing...')
     },
     async loggingOut(){
       try {
         await this.$auth.logout('laravelSanctum').then(response => {
+          this.$modal.hide('modal-logout')
           this.$toast.show({
             type: 'success',
             title: 'Logout Berhasil',

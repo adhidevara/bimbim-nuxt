@@ -4,7 +4,7 @@
         <div class="carousel-inner">
           <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
           <div class="carousel-item">
-            <img class="mx-auto" :data-src="currentImg" alt="banner" title="banner" v-lazy-load>
+            <img class="mx-auto" :src="currentImg" alt="banner" title="banner" data-not-lazy>
           </div>
           <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
           <div class="carousel-item">

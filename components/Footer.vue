@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-teal-700 md:h-screen text-sm max-w-full">
+  <div class="bg-teal-700 text-sm max-w-full">
     <div class="flex flex-wrap mx-1 overflow-hidden sm:mx-px md:mx-1 mt-20 xl:mx-64 p-4">
       <div class="my-1 px-1 w-2/5 overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-2/5 xl:w-2/5">
         <img class="w-32" src="https://dl.dropboxusercontent.com/s/qa3vm8ippsgima5/locmain-bw.png?dl=0">

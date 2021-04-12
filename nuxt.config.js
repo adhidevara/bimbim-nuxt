@@ -3,10 +3,10 @@ require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bimbim ID',
+    title: 'BIMBIM ID',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
       { hid: 'description', name: 'description', content: 'Belajar mudah bersama BimBim, Platform edukasi daerah No.1 di Trenggalek' },
       { name: 'theme-color', content: '#006d71' },
       { name: "msapplication-TileImage", content: "/locig.png" },
@@ -16,6 +16,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/locig.png' },
       { rel: 'shortcut icon', href:'/locig.png' },
       { rel: "preconnect", href:"https://fonts.gstatic.com" },
+      { rel: 'stylesheet', href:"https://unpkg.com/@icon/themify-icons/themify-icons.css" },
       { href:"https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap", rel:"stylesheet" }
     ],
     script: [
@@ -38,6 +39,13 @@ export default {
     { src: './plugins/vue-slick-carousel.js' },
     { src: './plugins/vee-validate' },
     { src: './plugins/vue-select' },
+    { src: './plugins/vuejs-modal' },
+    { src: './plugins/vue-social-sharing' },
+    { src: './plugins/vue-observe-visibility' },
+    { src: './plugins/vue-datetime-picker' },
+    { src: './plugins/vue-form-wizard' },
+    { src: './plugins/vue-youtube-embed', ssr: false },
+
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -66,6 +74,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/auth-next',
     '@nuxtjs/dotenv',
+    'nuxt-clipboard2',
     ['nuxt-lazy-load', {
       // These are the default values
       images: true,
@@ -88,7 +97,7 @@ export default {
         // See IntersectionObserver documentation
       }
     }],
-    ['nuxt-tailvue', {all: true}],
+    ['nuxt-tailvue', {toast: true, button: true, modal: false}],
     ['nuxt-fontawesome', {
         imports: [
          {
@@ -98,10 +107,16 @@ export default {
          {
            set:'@fortawesome/free-brands-svg-icons',
            icons: ['fab']
-         }
+         },
        ]
     }],
   ],
+
+  env: {
+    base_url: process.env.BASE_URL,
+    main_url: process.env.MAIN_URL || 'http://localhost:3000',
+    backend_url: process.env.BACKEND_URL,
+  },
 
   auth: {
     strategies: {
@@ -172,14 +187,14 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      "name": "bimbim Indonesia",
-      "short_name": "bimbim ID",
+      "name": "BIMBIM Indonesia",
+      "short_name": "BIMBIM ID",
       "description": "Belajar mudah bersama bimbim, Platform edukasi daerah No.1 di Trenggalek",
       "lang": "id",
       "dir": "ltr",
       "theme_color": "#006d71",
       "start_url": "../?src=pwa",
-      "background_color": "#70dacf",
+      "background_color": "#fff",
       "display": "standalone",
       "orientation": "portrait-primary",
       "apple-mobile-web-app-capable": "true",
