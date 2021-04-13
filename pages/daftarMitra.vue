@@ -323,11 +323,10 @@ export default {
     //Mapel Unggulan Handlers
     mapeluHandlers: (map, vm) => ({
       ...map, 50: e => {
-        // e.preventDefault();
-        // if( e.key === '@' && vm.search.length > 0 ) {
-        //   vm.search = `${vm.search}@gmail.com`;
-        // }
-        console.log(e)
+        e.preventDefault();
+        if( e.key === '@' && vm.search.length > 0 ) {
+          vm.search = `${vm.search}@gmail.com`;
+        }
       },
     }),
 
