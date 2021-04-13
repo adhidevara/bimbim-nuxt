@@ -2,6 +2,12 @@
   "name": "bimbim",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "generate": "npm run generate"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
