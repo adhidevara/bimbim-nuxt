@@ -273,7 +273,7 @@ export default {
   methods: {
     //API Get Data
     async getMitra() {
-      this.mitras = await this.$axios.get('/bimapi/api/mitra/detailGuru/'+this.$route.params.id)
+      this.mitras = await this.$axios.get('/api/mitra/detailGuru/'+this.$route.params.id)
       .then(result => {
         this.isLoad = true
         this.yellowStars = Math.floor(result.data.meta.rate)
