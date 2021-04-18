@@ -173,17 +173,16 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: `${process.env.BACKEND_URL}`,
-    proxy: false,
+    proxy: true,
     credentials: true,
   },
 
-  // proxy: {
-  //   '/bimapi': {
-  //     target: `${process.env.BACKEND_URL}`,
-  //     pathRewrite: { '^/bimapi': '/' }
-  //   },
-  // },
+  proxy: {
+    '/bimapi': {
+      target: `${process.env.BACKEND_URL}`,
+      pathRewrite: { '^/bimapi': '/' }
+    },
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
