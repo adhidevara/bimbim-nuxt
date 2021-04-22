@@ -180,7 +180,8 @@ export default {
   proxy: {
     '/bimapi': {
       target: `${process.env.BACKEND_URL}`,
-      pathRewrite: { '^/bimapi': '/' }
+      pathRewrite: { '^/bimapi': '/' },
+      changeOrigin: true,
     },
   },
 
