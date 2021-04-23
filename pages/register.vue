@@ -110,8 +110,8 @@ export default {
     regist(){
       //API Call Register
       this.isLoading = true
-      this.$axios.get('/bimapi/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/bimapi/api/user/register', {
+      this.$axios.get('/sanctum/csrf-cookie').then(response => {
+        this.$axios.post('/api/user/register', {
           email: this.register.email,
           nama: this.register.nama,
           no_telepon: this.register.no_telepon,
