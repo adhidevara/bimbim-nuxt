@@ -186,6 +186,12 @@ export default {
   //   },
   // },
 
+  server: {
+    port: `${process.env.PORT}`, // default: 3000
+    host: `${process.env.HOST}`, // default: localhost,
+    timing: false
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
