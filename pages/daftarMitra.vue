@@ -387,8 +387,8 @@ export default {
         },
         onUploadProgress: (progressEvent) => this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total)
       };
-      await this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/api/mitra/regisMitra', form, config)
+      await this.$axios.get('/bimapi/sanctum/csrf-cookie').then(response => {
+        this.$axios.post('/bimapi/api/mitra/regisMitra', form, config)
         .then(result => {
           this.progress = 0;
         })
@@ -400,28 +400,28 @@ export default {
 
     //Get Data Alamat
     async getProvinsi() {
-      await this.$axios.get('/api/daerah/getProvinsi')
+      await this.$axios.get('/bimapi/api/daerah/getProvinsi')
       .then(result => {
         this.provinsi = result.data.provinsi
       })
       .catch(error => console.log(error))
     },
     async getKota(params) {
-      await this.$axios.get('/api/daerah/getKota/'+params)
+      await this.$axios.get('/bimapi/api/daerah/getKota/'+params)
       .then(result => {
         this.kota = result.data.kota_kabupaten
       })
       .catch(error => console.error(error))
     },
     async getKecamatan(params) {
-      await this.$axios.get('/api/daerah/getKecamatan/'+params)
+      await this.$axios.get('/bimapi/api/daerah/getKecamatan/'+params)
       .then(result => {
         this.kecamatan = result.data.kecamatan
       })
       .catch(error => console.error(error))
     },
     async getKelurahan(params) {
-      await this.$axios.get('/api/daerah/getKelurahan/'+params)
+      await this.$axios.get('/bimapi/api/daerah/getKelurahan/'+params)
       .then(result => {
         this.kelurahan = result.data.kelurahan
       })

@@ -147,7 +147,7 @@ export default {
   },
   methods: {
     async getMitra(page) {
-      let getGuru = await this.$axios.get(`/api/mitra/getGuru?page=${page}`)
+      let getGuru = await this.$axios.get(`/bimapi/api/mitra/getGuru?page=${page}`)
       .then(result => {
         this.isLoad = true
         this.mitras.push(...result.data.data)
@@ -168,8 +168,8 @@ export default {
         })
       }else{
         this.priceOnLoad = true
-        await this.$axios.get('/sanctum/csrf-cookie').then(response => {
-          this.$axios.post(`/api/price/getPrice`,this.cariPrice)
+        await this.$axios.get('/bimapi/sanctum/csrf-cookie').then(response => {
+          this.$axios.post(`/bimapi/api/price/getPrice`,this.cariPrice)
           .then(result => {
             this.priceIsLoad = true
             this.priceOnLoad = false

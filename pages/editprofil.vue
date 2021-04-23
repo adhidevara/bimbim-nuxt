@@ -225,8 +225,8 @@ export default {
       }
     },
     updating() {
-      this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/api/user/updateProfil', this.update)
+      this.$axios.get('/bimapi/sanctum/csrf-cookie').then(response => {
+        this.$axios.post('/bimapi/api/user/updateProfil', this.update)
         .then(response => { this.success() })
         .catch(error => console.log(error))
       })

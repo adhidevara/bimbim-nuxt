@@ -173,18 +173,18 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: `${process.env.BACKEND_URL}`,
-    proxy: false,
+    // baseURL: `${process.env.BACKEND_URL}`,
+    proxy: true,
     credentials: true,
   },
 
-  // proxy: {
-  //   '/bimapi': {
-  //     target: `${process.env.BACKEND_URL}`,
-  //     pathRewrite: { '^/bimapi': '/' },
-  //     changeOrigin: true,
-  //   },
-  // },
+  proxy: {
+    '/bimapi': {
+      target: `${process.env.BACKEND_URL}`,
+      pathRewrite: { '^/bimapi': '/' },
+      changeOrigin: true,
+    },
+  },
 
   server: {
     port: `${process.env.PORT}`, // default: 3000
