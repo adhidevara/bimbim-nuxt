@@ -4,7 +4,7 @@
       <!-- <ProfilBar/>-->
       <!-- <hr class="border-2 rounded-lg mt-5"> -->
       <BannerCarousel/>
-      <hr class="border-2 rounded-lg mt-5">
+      <hr class="border-2 rounded-lg mt-10">
       <Products/>
       <hr class="border-2 rounded-lg mt-5">
       <Keunggulan/>

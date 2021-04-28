@@ -1,6 +1,13 @@
 <template>
   <div>
-    <div class="carousel max-w-2xl mx-auto mt-5">
+    <div class="px-4 mt-5">
+      <VueSlickCarousel v-bind="settings">
+        <div v-for="img in images" :key="img">
+          <img :src="img">
+        </div>
+      </VueSlickCarousel>
+    </div>
+    <!-- <div class="carousel max-w-2xl mx-auto mt-5">
         <div class="carousel-inner">
           <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
           <div class="carousel-item">
@@ -22,7 +29,15 @@
           <div class="carousel-item">
             <img data-src="https://dl.dropboxusercontent.com/s/kzj56mgcgoqzup9/ex_banner3.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
           </div>
-          <label for="carousel-5" class="carousel-control prev control-1">‹</label>
+          <input class="carousel-open" type="radio" id="carousel-6" name="carousel" aria-hidden="true" hidden="">
+          <div class="carousel-item">
+            <img data-src="https://dl.dropboxusercontent.com/s/v2ugnfqjmpe7tf0/banner-1.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
+          </div>
+          <input class="carousel-open" type="radio" id="carousel-7" name="carousel" aria-hidden="true" hidden="">
+          <div class="carousel-item">
+            <img data-src="https://dl.dropboxusercontent.com/s/oyziox3df3233fx/banner-2.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
+          </div>
+          <label for="carousel-7" class="carousel-control prev control-1">‹</label>
           <label for="carousel-2" class="carousel-control next control-1">›</label>
           <label for="carousel-1" class="carousel-control prev control-2">‹</label>
           <label for="carousel-3" class="carousel-control next control-2">›</label>
@@ -31,7 +46,11 @@
           <label for="carousel-3" class="carousel-control prev control-4">‹</label>
           <label for="carousel-5" class="carousel-control next control-4">›</label>
           <label for="carousel-4" class="carousel-control prev control-5">‹</label>
-          <label for="carousel-1" class="carousel-control next control-5">›</label>
+          <label for="carousel-6" class="carousel-control next control-5">›</label>
+          <label for="carousel-5" class="carousel-control prev control-6">‹</label>
+          <label for="carousel-7" class="carousel-control next control-6">›</label>
+          <label for="carousel-6" class="carousel-control prev control-7">‹</label>
+          <label for="carousel-1" class="carousel-control next control-7">›</label>
           <ol class="carousel-indicators">
             <li>
               <label for="carousel-1" class="carousel-bullet">.</label>
@@ -48,20 +67,48 @@
             <li>
               <label for="carousel-5" class="carousel-bullet">.</label>
             </li>
+            <li>
+              <label for="carousel-6" class="carousel-bullet">.</label>
+            </li>
+            <li>
+              <label for="carousel-7" class="carousel-bullet">.</label>
+            </li>
           </ol>
         </div>
-      </div>
+      </div> -->
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 export default {
   name: "Slider",
+  components: { VueSlickCarousel },
   data() {
     return {
+      settings: {
+        "arrows": true,
+        "dots": true,
+        "infinite": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "speed": 300,
+        "autoplaySpeed": 4000,
+        "cssEase": "linear",
+        "adaptiveHeight": true,
+        "fade": true,
+      },
       images: [
+        "https://dl.dropboxusercontent.com/s/oyziox3df3233fx/banner-2.jpg?dl=0",
+        "https://dl.dropboxusercontent.com/s/v2ugnfqjmpe7tf0/banner-1.jpg?dl=0",
         "https://dl.dropboxusercontent.com/s/xke27xw5ou3cr50/bimsc.jpg?dl=0",
         "https://dl.dropboxusercontent.com/s/blk3n1l07d5ywks/bim.jpg?dl=0",
+        "https://dl.dropboxusercontent.com/s/xqabo0g5l3nrut8/ex_banner2.jpg?dl=0",
+        "https://dl.dropboxusercontent.com/s/kzj56mgcgoqzup9/ex_banner3.jpg?dl=0",
       ],
       timer: null,
       currentIndex: 0
@@ -74,7 +121,7 @@ export default {
 
   methods: {
     startSlide: function() {
-      this.timer = setInterval(this.next, 4000);
+      this.timer = setInterval(this.next, 6000);
     },
 
     next: function() {
@@ -209,7 +256,9 @@ export default {
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3,
 #carousel-4:checked ~ .control-4,
-#carousel-5:checked ~ .control-5 {
+#carousel-5:checked ~ .control-5,
+#carousel-6:checked ~ .control-6,
+#carousel-7:checked ~ .control-7 {
     display: block;
 }
 
@@ -245,7 +294,9 @@ export default {
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
 #carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
-#carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet {
+#carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet,
+#carousel-6:checked ~ .control-6 ~ .carousel-indicators li:nth-child(6) .carousel-bullet,
+#carousel-7:checked ~ .control-7 ~ .carousel-indicators li:nth-child(7) .carousel-bullet {
     color: #034244;
 }
 

@@ -2,6 +2,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'BIMBIM ID',
