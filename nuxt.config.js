@@ -2,7 +2,6 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
-  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'BIMBIM ID',
@@ -64,6 +63,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/moment'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -77,6 +77,7 @@ export default {
     '@nuxtjs/auth-next',
     '@nuxtjs/dotenv',
     'nuxt-clipboard2',
+    '@nuxtjs/moment',
     ['nuxt-lazy-load', {
       // These are the default values
       images: true,
@@ -113,6 +114,11 @@ export default {
        ]
     }],
   ],
+
+  moment: {
+    locales: ['id'],
+    defaultTimezone: 'Asia/Jakarta'
+  },
 
   env: {
     base_url: process.env.BASE_URL,

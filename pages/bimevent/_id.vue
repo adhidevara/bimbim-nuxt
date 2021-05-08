@@ -18,9 +18,9 @@
               @close="close"
               network="email"
               :url="url"
-              :title="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!`"
-              :description="`\n\nHai, `+`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n\n`+mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!`"
+              :description="`\n\nHai, `+`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n\n`+events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
               hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fas', 'at']"/>
@@ -31,9 +31,9 @@
               @close="close"
               network="sms"
               :url="url"
-              :title="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!`"
-              :description="`\n\nHai, `+`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n\n`+mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!`"
+              :description="`\n\nHai, `+`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n\n`+events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
               hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fas', 'envelope']"/>
@@ -44,9 +44,9 @@
               @close="close"
               network="facebook"
               :url="url"
-              :title="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!! `+mitras.deskripsi"
-              :description="mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!! `+events.deskripsi"
+              :description="events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
               hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fab', 'facebook']"/>
@@ -57,10 +57,10 @@
               @close="close"
               network="twitter"
               :url="url"
-              :title="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!`"
-              :description="mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!`"
-              hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!`"
+              :description="events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!`"
+              hashtags="bimbimindonesia,bimbimid,bimevent,bimbingan,lesprivat"
               twitterUser="bimbimid"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fab', 'twitter']"/>
@@ -75,10 +75,10 @@
               @close="close"
               network="whatsapp"
               :url="url"
-              :title="`👋Hai saya `+mitras.nama+` yuk belajar bareng di BIMGURU!!`"
-              :description="`\n\nHai, `+`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n\n`+mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
-              hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk ramein event-nya di BIMEVENT!!`"
+              :description="`\n\nHai, `+`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n\n`+events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
+              hashtags="bimbimindonesia,bimbimid,bimevent,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fab', 'whatsapp']"/>
             </ShareNetwork>
@@ -88,10 +88,10 @@
               @close="close"
               network="telegram"
               :url="url"
-              :title="`👋Hai saya `+mitras.nama+` yuk belajar bareng di BIMGURU!!`"
-              :description="`\n\nHai, `+`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n\n`+mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
-              hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk ramein event-nya di BIMEVENT!!`"
+              :description="`\n\nHai, `+`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n\n`+events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
+              hashtags="bimbimindonesia,bimbimid,bimevent,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fab', 'telegram']"/>
             </ShareNetwork>
@@ -101,10 +101,10 @@
               @close="close"
               network="line"
               :url="url"
-              :title="`👋Hai saya `+mitras.nama+` yuk belajar bareng di BIMGURU!!`"
-              :description="`\n\nHai, `+`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n\n`+mitras.deskripsi"
-              :quote="`👋Bimbingan bareng kak `+mitras.nama+` yuk di BIMGURU!!\n`+mitras.deskripsi"
-              hashtags="bimbimindonesia,bimbimid,bimguru,bimbingan,lesprivat"
+              :title="`👋Mari bergabung ke event `+events.title+` yuk ramein event-nya di BIMEVENT!!`"
+              :description="`\n\nHai, `+`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n\n`+events.deskripsi"
+              :quote="`👋Mari bergabung ke event `+events.title+` yuk di BIMEVENT!!\n`+events.deskripsi"
+              hashtags="bimbimindonesia,bimbimid,bimevent,bimbingan,lesprivat"
             >
               <font-awesome-icon class="hover:text-teal-800 cursor-pointer" :icon="['fab', 'line']"/>
             </ShareNetwork>
@@ -129,13 +129,13 @@
           <div class="text-center font-sans mx-auto">
             <h1 class="text-teal-700 mt-3">
               <span class="font-extrabold text-5xl xs:text-4xl">Detail</span>
-              <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Guru</span>
+              <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Event</span>
             </h1>
           </div>
           <div class="flex flex-col justify-items-center items-center mx-auto mt-5">
             <youtube
               class="border-8 border-teal-700 rounded-xl"
-              :video-id="videoId"
+              :video-id="events.video"
               player-width="265"
               player-height="200"
             />
@@ -143,38 +143,14 @@
           <div class="flex flex-wrap overflow-hidden justify-items-center items-center text-left bg-teal-700 p-3 rounded-xl text-white mt-3">
             <div class="w-full text-center font-sans transform scale-75">
               <h1 class="text-white">
-                <span class="font-extrabold text-xl xs:text-4xl">Riwayat</span>
-                <span class="font-semibold text-4xl xs:text-xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Pendidikan</span>
+                <span class="font-extrabold text-xl xs:text-4xl">Informasi</span>
+                <span class="font-semibold text-4xl xs:text-xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Event</span>
               </h1>
             </div>
-            <div class="w-1/2 overflow-hidden">
-              Institusi :
+            <div class="w-full">
+              <a v-if="events.sertif_link !== null" :href="events.sertif_link" target="_blank" class="bg-orange-700 hover:bg-orange-900 p-2 rounded-xl text-center block m-3">Sertifikat Peserta</a>
+              <a v-if="events.event_link !== null" :href="events.event_link" target="_blank" class="bg-blue-700 p-2 hover:bg-blue-900 rounded-xl text-center block m-3">Lihat Event</a>
             </div>
-            <div class="w-1/2 overflow-hidden font-bold mt-2">
-              {{ mitras.institusi }}
-            </div>
-            <div class="w-1/2 overflow-hidden">
-              Prodi :
-            </div>
-            <div class="w-1/2 overflow-hidden font-bold mt-2">
-              {{ mitras.prodi }}
-            </div>
-            <div class="w-1/2 overflow-hidden">
-              IPK Terakhir :
-            </div>
-            <div class="w-1/2 overflow-hidden font-bold mt-2">
-              {{ mitras.ipk }}
-            </div>
-            <div class="w-1/2 overflow-hidden">
-              Status Studi :
-            </div>
-            <div class="w-1/2 overflow-hidden uppercase font-bold mt-2">
-              {{ mitras.status_studi }}
-            </div>
-            <a :href="mitras.cv" target="_blank" class="w-full overflow-hidden text-center bg-orange-500 hover:bg-orange-700 cursor-pointer rounded-xl text-white p-3 font-bold mt-2">
-              <font-awesome-icon v-if="mitras.is_verified == 1" class="text-current" :icon="['fas', 'download']" title="Unduh CV"/>
-              Unduh CV
-            </a>
           </div>
         </div>
         <button @click.prevent="hide('modal-detail')" class="text-center w-full text-white bg-teal-700 hover:bg-teal-800 p-3">Tutup</button>
@@ -190,58 +166,57 @@
             <div class="text-center font-sans mx-auto mt-3 lg:mb-5">
               <h1 class="text-teal-700">
                 <span class="font-extrabold text-5xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">Detail</span>
-                <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Guru</span>
+                <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">Event</span>
               </h1>
             </div>
 
             <div class="flex flex-col md:flex-row">
             <div class="md:flex-1 items-center rounded-xl">
-              <div class="rounded-full shadow-xl mx-auto mt-4 xs:w-48 xs:h-48 mb-4 md:h-64 md:w-64 bg-cover bg-center border-b-8 border-t-4 border-teal-700" :style="{'background-image' : 'url('+mitras.foto+')'}" data-not-lazy>
-              </div>
+              <a :href="events.foto" target="_blank">
+                <div class="transform scale-105 hover:scale-150 shadow-xl mx-auto mt-4 xs:w-48 xs:h-48 mb-4 md:h-64 md:w-64 bg-contain bg-no-repeat bg-center" :style="{'background-image' : 'url('+events.foto+')'}" data-not-lazy>
+                </div>
+              </a>
             </div>
             <div class="md:flex-1 p-4">
-              <div v-if="mitras.is_verified == 1" class="text-teal-700 font-semibold text-xs border-l-2 rounded-full mb-2 pl-1 border-teal-700">
-                <font-awesome-icon v-if="mitras.is_verified == 1" class="text-current" :icon="['fas', 'check']" title="Mitra Terverifikasi"/>
-                Mitra Terverifikasi
+              <div v-if="events.is_verified == 1" class="text-teal-700 font-semibold text-xs border-l-2 rounded-full mb-2 pl-1 border-teal-700">
+                <font-awesome-icon v-if="events.is_verified == 1" class="text-current" :icon="['fas', 'check']" title="Mitra Terverifikasi"/>
+                Event Terverifikasi
               </div>
               <h2 class="leading-tight tracking-tight font-bold text-teal-700 text-3xl md:text-3xl">
-                {{ mitras.nama }}
+                {{ events.title }}
               </h2>
-              <p class="flex -space-x-2 font-bold text-orange-500 text-3xl md:text-3xl">
+              <!-- <p class="flex -space-x-2 font-bold text-orange-500 text-3xl md:text-3xl">
                 <font-awesome-icon class="transform scale-75 cursor-pointer text-orange-500" :icon="['fas', 'star']" title="Rating" v-for="n in yellowStars" :key="n"/>
                 <font-awesome-icon class="transform scale-75 cursor-pointer text-gray-500" :icon="['fas', 'star']" title="Rating" v-for="y in greyStars" :key="y"/>
-              </p>
-              <p class="mt-1 text-orange-500">
+              </p> -->
+              <!-- <p class="mt-1 text-orange-500">
                 <span class="text-md font-medium">&nbsp;{{ reviewStat.rate }}/<small>4 <a href="#" class="hover:underline">({{ reviewStat.jmlUlasan }} ulasan)</a></small></span>
-              </p>
-              <p class="mb-0 leading-tight tracking-tight font-bold text-teal-700 text-3xl md:text-3xl">
+              </p> -->
+              <p class="mb-0 leading-tight tracking-tight font-bold text-teal-700 text-3xl md:text-3xl mt-3">
                 <font-awesome-icon v-if="isLike == false" @click.prevent="isLike = !isLike" class="text-gray-300 transform scale-75 cursor-pointer hover:text-pink-500" :icon="['fas', 'heart']" title="Suka"/>
                 <font-awesome-icon v-if="isLike == true" @click.prevent="isLike = !isLike" class="transform scale-75 cursor-pointer text-pink-500" :icon="['fas', 'heart']" title="Suka"/>
                 <font-awesome-icon @click.prevent="show('modal-share')" tag="button" class="text-gray-300 transform scale-75 cursor-pointer hover:text-teal-700" :icon="['fas', 'share-square']" title="Bagikan"/>
               </p>
-              <p class="text-gray-500 text-sm">
-                <font-awesome-icon class="text-teal-700" :icon="['fas', 'map-marker-alt']"/>
-                <a href="#" class="text-teal-700 hover:underline">
-                  {{ mitras.kota }}
-                </a>
+              <p class="text-teal-700 text-sm mt-3">
+                <h4 class="text-teal-700"><font-awesome-icon :icon="['fas', 'calendar']"/> {{ $moment(events.start_tgl_event).format('LLLL') }}</h4>
+                <h4 class="text-teal-700"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> {{ events.event_type }} di {{ events.lokasi }}</h4>
+                <h4 class="text-teal-700"><font-awesome-icon :icon="['fas', 'id-badge']"/> {{ events.nama_cp }}</h4>
+                <h4 v-if="events.isPaid == 0" class="text-teal-700"><font-awesome-icon :icon="['fas', 'money-bill-wave']"/> Rp. 0 <b>(Free)</b></h4>
+                <h4 v-else class="text-teal-700"><font-awesome-icon :icon="['fas', 'money-bill-wave']"/> Rp. {{ formatPrice(events.price) }}</h4>
               </p>
-
-              <div class="mt-2">
-                <span class="mr-1 rounded-full bg-gray-300 p-1 text-teal-700 text-sm" v-for="tmp in tagsMapel" :key="tmp.id_mapel_unggulan">
-                  #{{ tmp.nama_mapel }}
-                </span>
-              </div>
-
-              <h1 class="text-teal-700 text-justify mt-5 font-extrabold text-xl uppercase">{{ mitras.title }}</h1>
-              <p class="text-teal-700 text-justify mt-1 mb-5 font-semibold">{{ mitras.deskripsi }}</p>
+              <h1 class="text-teal-700 mt-5 font-extrabold text-xl uppercase">Deskripsi</h1>
+              <p class="text-teal-700 text-justify mt-1 mb-5 font-semibold">{{ events.deskripsi }}</p>
 
               <div class="flex-1 items-center pt-2 space-y-2">
                 <button @click.prevent="show('modal-detail')" type="button" class="w-full h-14 px-6 py-2 font-semibold rounded-xl bg-gray-500 hover:bg-gray-600 text-white">
-                  <font-awesome-icon class="text-white" :icon="['fas', 'bars']"/> Detail Guru
+                  <font-awesome-icon class="text-white" :icon="['fas', 'bars']"/> Detail Event
                 </button>
-                <button type="button" class="w-full h-14 px-6 py-2 font-semibold rounded-xl bg-teal-700 hover:bg-teal-800 text-white">
-                  <font-awesome-icon class="text-white" :icon="['fas', 'pencil-alt']"/> Ajukan Bimbingan
-                </button>
+                <a v-if="dayExpiration < 0" :href="events.regis_link" target="_blank" tag="button" type="button" class="w-full h-14 px-6 py-2 font-semibold rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-center">
+                  <font-awesome-icon class="text-white" :icon="['fas', 'pencil-alt']"/> Daftar / Ikuti Event
+                </a>
+                <a v-else-if="dayExpiration >= 0" href="#" tag="button" type="button" class="w-full h-14 px-6 py-2 font-semibold rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-center">
+                  <font-awesome-icon class="text-white" :icon="['fas', 'check']"/> Event Telah Berlangsung
+                </a>
               </div>
             </div>
           </div>
@@ -256,9 +231,8 @@ export default {
   auth: false,
   data() {
     return {
-      mitras: [],
+      events: [],
       reviewStat: [],
-      tagsMapel: [],
       isLoad: false,
       info: "Mohon Tunggu",
       toogleModal: false,
@@ -268,18 +242,23 @@ export default {
       yellowStars: 0,
       greyStars:0,
       videoId: "sdCCkFrkfIE",
+      dayExpiration: null,
     }
   },
   methods: {
+    getExpired() {
+    },
     //API Get Data
-    async getMitra() {
-      this.mitras = await this.$axios.get('/bimapi/api/mitra/detailGuru/'+this.$route.params.id)
+    async getEvent() {
+      this.events = await this.$axios.get('/bimapi/api/event/detailEvent/'+this.$route.params.id)
       .then(result => {
         this.isLoad = true
-        this.yellowStars = Math.floor(result.data.meta.rate)
-        this.greyStars = 4 - this.yellowStars
-        this.reviewStat = result.data.meta
-        this.tagsMapel = result.data.data[0].mapel_unggulan
+        var a = this.$moment();//now
+        var b = this.$moment(result.data.data[0].start_tgl_event);
+        this.dayExpiration = a.diff(b, 'days')
+        // console.log(a)
+        // console.log(b)
+        // console.log(a.diff(b, 'days')) // 31
         return result.data.data[0]
       })
       .catch(error => {
@@ -333,9 +312,14 @@ export default {
       console.log('Closing...')
     },
     //Modal
+
+    formatPrice(value) {
+        let val = (value/1).toFixed(2).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    }
   },
   mounted() {
-    this.getMitra()
+    this.getEvent()
     this.shareUrl()
   },
 }
