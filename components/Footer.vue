@@ -3,7 +3,9 @@
     <div class="flex flex-wrap mx-1 overflow-hidden sm:mx-px md:mx-1 mt-20 xl:mx-64 p-4">
       <div class="my-1 px-1 w-2/5 overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-2/5 xl:w-2/5">
         <img class="w-32" src="https://dl.dropboxusercontent.com/s/qa3vm8ippsgima5/locmain-bw.png?dl=0">
-        <p class="text-justify text-white md:mt-4"><span class="font-bold">bimbim</span> adalah platform penghubung antara guru pembimbing dan siswa atau orang tua serta untuk memfasilitasi guru honorer, mahasiswa, fresh graduate dan tenaga pendidikan mendapatkan tempat untuk mencari siswa bimbingan secara mudah dan efisien baik akademik maupun non akademik. Melalui <span class="font-bold">bimbim</span> guru/pelatih pembimbing dapat menawarkan jasa bimbinganya. Melalui <span class="font-bold">bimbim</span> siswa/orang tua dapat menemukan pembimbing secara mudah dan berkualitas.</p>
+        <p class="text-justify text-white md:mt-4">
+          <span class="font-bold">Bimbim</span> adalah platform yang menghubungkan antara pembimbing privat dan siswa/orang tua. <span class="font-bold">Bimbim</span> memfasilitasi tenaga pendidik dari berbagai latar belakang seperti guru honorer, fresh graduate, atau pun mahasiswa untuk bertemu dengan siswa yang membutuhkan jasa bimbingan di bidang akademik maupun nonakademik. Melalui <span class="font-bold">bimbim</span>, siswa/orang tua dapat menemukan pembimbing privat secara mudah, efisien, serta harga yang terjangkau.
+        </p>
       </div>
       <div class="my-1 px-1 w-1/4 overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/5 xl:w-1/5">
         <div class="xs:mt-3 md:text-right md:my-3 md:mx-5 lg:text-left text-white flex flex-col">
@@ -12,7 +14,7 @@
           <nuxt-link class="hover:text-teal-400" to="/tentangkami">Tentang Kami</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/mitra">Kemitraan</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/privasi">Kebijakan Privasi</nuxt-link>
-          <nuxt-link class="hover:text-teal-400" to="/syaratketentuan">Syarat & Ketentuan</nuxt-link>
+          <nuxt-link class="hover:text-teal-400" to="/mou-kemitraan">Syarat & Ketentuan Kemitraan</nuxt-link>
         </div>
       </div>
       <div class="my-1 px-1 w-1/4 overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/5 xl:w-1/5">
@@ -85,6 +87,7 @@
       <div class="my-1 px-1 w-full overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-full lg:w-full xl:w-full text-center text-white font-normal text-xs border-t-2">
         <img class="mx-auto w-20 mt-2" src="https://dl.dropboxusercontent.com/s/qa3vm8ippsgima5/locmain-bw.png?dl=0">
         <p>Sincerely, bimbim from Indonesia, BIMBIM © 2021, All Right Reserved</p>
+        <p class="text-xs">Powered By PT. Makna Jatim Ciber Media</p>
       </div>
     </div>
   </div>

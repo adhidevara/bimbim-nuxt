@@ -8,11 +8,11 @@
     </div>
     <div class="flex flex-wrap overflow-hidden mt-4 -mb-20">
       <div class="w-1/2 overflow-hidden xs:w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
-        <img class="mx-auto max-w-xl xs:w-full" data-src="https://dl.dropboxusercontent.com/s/e7dnevcqnhe65ah/mitrasamp.png?dl=0" alt="" title="" v-lazy-load>
+        <img class="mx-auto max-w-xl xs:w-full" data-src="https://dl.dropboxusercontent.com/s/en12izta2iteejq/mitratal%20%281%29.png?dl=0" alt="" title="" v-lazy-load>
       </div>
       <div class="w-1/2 overflow-hidden xs:w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 md:pr-4">
         <div class="xs:mt-5 md:mt-20">
-          <p class="text-justify text-xl font-semibold my-auto text-teal-700">Bergabunglah menjadi mitra Pengajar, Pelatih sesuai kompetensi yang anda miliki. Kami akan membantu anda mewujudkan keinginan anda untuk menjadi tenaga pengajar yang berkompeten di bidangnya</p>
+          <p class="text-justify text-xl font-semibold my-auto text-teal-700">Bergabunglah menjadi mitra Pengajar atau Pelatih sesuai kompetensi yang anda miliki. Kami akan membantu anda mewujudkan keinginan anda untuk menjadi tenaga pengajar yang berkompeten di bidangnya</p>
         </div>
         <hr class="border-2 rounded-lg mt-5">
         <div class="mt-10 mb-5">
