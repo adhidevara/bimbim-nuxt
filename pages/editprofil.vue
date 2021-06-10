@@ -208,6 +208,19 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: this.$auth.user.nama+' - Edit Profil',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: this.$auth.user.bio },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
+    }
+  },
   methods: {
     upload(){
       alert('Coming Soon')

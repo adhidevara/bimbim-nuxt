@@ -37,7 +37,7 @@
           </div>
 
           <ValidationObserver ref="observer">  <!-- v-slot="{ invalid }" -->
-            <form-wizard tag="form" shape="square" @on-complete="onComplete" stepSize="md" errorColor="red" transition="bounce" color="#006d71" title="Mari bergabung menjadi mitra pengajar kami" subtitle="Dapatkan pengalaman baru dengan mengajar di Bimbim" nextButtonText="Selanjutnya" backButtonText="Kembali" finishButtonText="Kirim">
+            <form-wizard tag="form" shape="square" @on-complete="onComplete" stepSize="md" errorColor="red" transition="bounce" color="#006d71" title="Mari bergabung menjadi mitra pengajar kami" subtitle="Dapatkan pengalaman baru dengan mengajar di BIMBIM" nextButtonText="Selanjutnya" backButtonText="Kembali" finishButtonText="Kirim">
               <tab-content title="Data Diri" icon="ti ti-user" class="flex flex-wrap -mx-1 overflow-hidden">
                 <div class="border-r-2 border-teal-700 mb-2 pt-3 rounded bg-gray-200 lg:w-1/4 md:w-1/2 xs:w-full">
                   <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="nama">Nama Lengkap</label>
@@ -358,6 +358,19 @@ export default {
       nameFoto: "Upload Foto",
       nameCV: "Upload CV",
       progress: 0,
+    }
+  },
+  head() {
+    return {
+      title: 'Pendaftaran Kemitraan',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: 'Mari bergabung menjadi mitra pengajar kami dan Dapatkan pengalaman baru dengan mengajar di BIMBIM' },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
     }
   },
   methods: {

@@ -51,6 +51,19 @@ export default {
       isLoad: true,
     }
   },
+  head() {
+    return {
+      title: 'BIMEVENT - Event/Webinar/Talkshow',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: 'Bim Event merupakan fitur untuk mencari event-event menarik yang ada di bimbim untuk menunjang aktifitas akademik anda' },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
+    }
+  },
   mounted() {
     this.getEvent(1)
   },

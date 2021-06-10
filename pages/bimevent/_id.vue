@@ -245,6 +245,19 @@ export default {
       dayExpiration: null,
     }
   },
+  head() {
+    return {
+      title: this.events.title+' - BIMEVENT',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: this.events.deskripsi },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
+    }
+  },
   methods: {
     getExpired() {
     },

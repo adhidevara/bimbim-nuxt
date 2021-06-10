@@ -4,7 +4,7 @@ export default {
   mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'BIMBIM ID',
+    title: 'BIMBIM Indonesia',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },

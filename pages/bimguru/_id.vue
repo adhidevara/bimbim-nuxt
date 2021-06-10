@@ -270,6 +270,19 @@ export default {
       videoId: "sdCCkFrkfIE",
     }
   },
+  head() {
+    return {
+      title: this.mitras.nama+' - BIMGURU',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: this.mitras.title },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
+    }
+  },
   methods: {
     //API Get Data
     async getMitra() {

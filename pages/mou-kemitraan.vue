@@ -301,5 +301,18 @@
 <script>
 export default {
   auth: false,
+  head() {
+    return {
+      title: 'Syarat dan Ketentuan Kemitraan (MOU) - BIMBIM Indonesia',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        { hid: 'description', name: 'description', content: 'Berikut adalah MOU atau Syarat dan Ketentuan untuk kemitraan di BIMBIM Indonesia. Baca selengkapnya...' },
+        { name: 'theme-color', content: '#006d71' },
+        { name: "msapplication-TileImage", content: "/locig.png" },
+        { name: "msapplication-TileColor", content: "#006d71" },
+      ],
+    }
+  },
 }
 </script>

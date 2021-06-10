@@ -1,81 +1,12 @@
 <template>
   <div>
     <div class="px-4 mt-5">
-      <VueSlickCarousel v-bind="settings">
-        <div v-for="img in images" :key="img">
-          <img :src="img">
+      <VueSlickCarousel v-bind="settings" ref="carousel" v-if="images.length">
+        <div v-for="(img,id) in images" :key="id">
+          <img :src="img.link">
         </div>
       </VueSlickCarousel>
     </div>
-    <!-- <div class="carousel max-w-2xl mx-auto mt-5">
-        <div class="carousel-inner">
-          <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-          <div class="carousel-item">
-            <img class="mx-auto" :src="currentImg" alt="banner" title="banner" data-not-lazy>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/xqabo0g5l3nrut8/ex_banner2.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/blk3n1l07d5ywks/bim.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/xke27xw5ou3cr50/bimsc.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/kzj56mgcgoqzup9/ex_banner3.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-6" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/v2ugnfqjmpe7tf0/banner-1.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <input class="carousel-open" type="radio" id="carousel-7" name="carousel" aria-hidden="true" hidden="">
-          <div class="carousel-item">
-            <img data-src="https://dl.dropboxusercontent.com/s/oyziox3df3233fx/banner-2.jpg?dl=0" alt="banner" title="banner" v-lazy-load>
-          </div>
-          <label for="carousel-7" class="carousel-control prev control-1">‹</label>
-          <label for="carousel-2" class="carousel-control next control-1">›</label>
-          <label for="carousel-1" class="carousel-control prev control-2">‹</label>
-          <label for="carousel-3" class="carousel-control next control-2">›</label>
-          <label for="carousel-2" class="carousel-control prev control-3">‹</label>
-          <label for="carousel-4" class="carousel-control next control-3">›</label>
-          <label for="carousel-3" class="carousel-control prev control-4">‹</label>
-          <label for="carousel-5" class="carousel-control next control-4">›</label>
-          <label for="carousel-4" class="carousel-control prev control-5">‹</label>
-          <label for="carousel-6" class="carousel-control next control-5">›</label>
-          <label for="carousel-5" class="carousel-control prev control-6">‹</label>
-          <label for="carousel-7" class="carousel-control next control-6">›</label>
-          <label for="carousel-6" class="carousel-control prev control-7">‹</label>
-          <label for="carousel-1" class="carousel-control next control-7">›</label>
-          <ol class="carousel-indicators">
-            <li>
-              <label for="carousel-1" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-2" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-3" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-4" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-5" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-6" class="carousel-bullet">.</label>
-            </li>
-            <li>
-              <label for="carousel-7" class="carousel-bullet">.</label>
-            </li>
-          </ol>
-        </div>
-      </div> -->
   </div>
 </template>
 
@@ -89,6 +20,7 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      images: [],
       settings: {
         "arrows": true,
         "dots": true,
@@ -102,42 +34,25 @@ export default {
         "adaptiveHeight": true,
         "fade": true,
       },
-      images: [
-        "https://dl.dropboxusercontent.com/s/oyziox3df3233fx/banner-2.jpg?dl=0",
-        "https://dl.dropboxusercontent.com/s/v2ugnfqjmpe7tf0/banner-1.jpg?dl=0",
-        "https://dl.dropboxusercontent.com/s/xke27xw5ou3cr50/bimsc.jpg?dl=0",
-        "https://dl.dropboxusercontent.com/s/blk3n1l07d5ywks/bim.jpg?dl=0",
-        "https://dl.dropboxusercontent.com/s/xqabo0g5l3nrut8/ex_banner2.jpg?dl=0",
-        "https://dl.dropboxusercontent.com/s/kzj56mgcgoqzup9/ex_banner3.jpg?dl=0",
-      ],
-      timer: null,
-      currentIndex: 0
     };
   },
 
   mounted: function() {
-    this.startSlide();
+    this.getAllBanner()
   },
 
   methods: {
-    startSlide: function() {
-      this.timer = setInterval(this.next, 6000);
+    async getAllBanner() {
+      let getAllBanner = await this.$axios.get(`/bimapi/api/banner/getAllBanner`)
+      .then(result => {
+        this.images = result.data.data
+      })
+      .catch(error => {
+        console.error(error)
+      })
     },
-
-    next: function() {
-      this.currentIndex += 1;
-    },
-    prev: function() {
-      this.currentIndex -= 1;
-    }
   },
-
-  computed: {
-    currentImg: function() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
-    }
-  }
-};
+}
 </script>
 
 <style>
