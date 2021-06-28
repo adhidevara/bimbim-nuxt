@@ -168,11 +168,25 @@ export default {
         // },
       },
     },
+    watchLoggedIn: true,
+    localStorage: {
+        prefix: ''
+    },
+    cookie: {
+      prefix: '', // Default token prefix used in building a key for token storage in the browser's localStorage.
+      options: {
+        path: '/', // Path where the cookie is visible. Default is '/'.
+        expires: 5, // Can be used to specify cookie lifetime in Number of days or specific Date. Default is session only.
+        domain: '', // Domain (and by extension subdomain/s) where the cookie is visible. Default is domain and all subdomains.
+        secure : true, // Sets whether the cookie requires a secure protocol (https). Default is false, should be set to true if possible.
+        }
+    },
     redirect: {
       login: '/login',
       logout: '/',
       homepage: '/'
-    }
+    },
+    resetOnError: true,
   },
 
   router: {

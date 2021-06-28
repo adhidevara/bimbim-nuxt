@@ -32,12 +32,12 @@
             </ValidationProvider>
 
           <div class="mx-auto lg:mx-0 w-5/6 pt-3 border-b-2 border-teal-700"></div>
-          <p class="pt-4 text-sm font-bold flex items-center justify-center lg:justify-start">
+          <div class="pt-4 text-sm font-bold flex items-center justify-center lg:justify-start">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'envelope']"/>
             &nbsp;&nbsp;&nbsp;
             {{ update.email }}
-          </p>
-          <p class="pt-4 text-sm flex items-center justify-center lg:justify-start">
+          </div>
+          <div class="pt-4 text-sm flex items-center justify-center lg:justify-start">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'map-marker-alt']"/>&nbsp;&nbsp;&nbsp;
             <ValidationProvider mode="aggressive" rules="required" v-slot="{ errors }" class="w-1/2 mr-1">
             <v-select tag="input" class="w-full" :options="kota" v-model="update.kota" placeholder="Kota"></v-select>
@@ -47,16 +47,16 @@
             <v-select tag="input" class="w-full" :options="provinsi" v-model="update.provinsi" placeholder="Provinsi"></v-select>
             <span class="text-red-600 text-sm">{{ errors[0] }}</span>
             </ValidationProvider>
-          </p>
+          </div>
           <ValidationProvider mode="aggressive" rules="required|minmax:4,100" v-slot="{ errors }">
-          <p class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
+          <div class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'map-marker-alt']"/>&nbsp;&nbsp;&nbsp;
             <textarea placeholder="Alamat" class="w-full border-2 border-gray-300 rounded-lg placeholder-black p-2" v-model="update.alamat"></textarea>
-          </p>
+          </div>
           <span class="text-red-600 text-sm w-full text-center">{{ errors[0] }}</span>
           </ValidationProvider>
           <ValidationProvider mode="aggressive" rules="required|numeric|minmax:3,13" v-slot="{ errors }">
-          <p class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
+          <div class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'phone']"/>&nbsp;&nbsp;&nbsp;
             <input
                 id="no_telepon"
@@ -66,14 +66,14 @@
                 class="w-full border-2 border-gray-300 rounded-lg placeholder-black p-2 text-left"
                 :class="{ 'border-red-600' : errors[0] }"
                 />
-          </p>
+          </div>
           <span class="text-red-600 text-sm">{{ errors[0] }}</span>
           </ValidationProvider>
           <ValidationProvider mode="aggressive" rules="required" v-slot="{ errors }">
-          <p class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
+          <div class="pt-2 text-sm font-bold flex items-center justify-center lg:justify-start">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'user-graduate']"/>&nbsp;&nbsp;&nbsp;
             <v-select tag="input" class="w-full" :options="pendidikan" v-model="update.pendidikan" placeholder="Pendidikan"></v-select>
-          </p>
+          </div>
           <span class="text-red-600 text-sm w-full text-center">{{ errors[0] }}</span>
           </ValidationProvider>
           <textarea class="border-2 w-full mt-4 p-2 text-sm" v-model="update.bio" placeholder="Tulis beberapa kata tentangmu...(Opsional)"></textarea>
@@ -251,7 +251,7 @@ export default {
         title: 'Update Berhasil',
         message: 'Hai, '+this.$auth.user.nama+' data anda berhasil di Update!',
       })
-      .then(respone => {this.$routes.push('/profil')})
+      this.$router.push('/profil');
     }
   },
 }
