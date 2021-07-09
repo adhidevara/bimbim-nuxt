@@ -206,17 +206,17 @@
                 <div
                   :class="{'lg:w-full': register.bidang !== 'BIM PELATIH', 'md:w-full': register.bidang !== 'BIM PELATIH'}"
                   class="border-r-2 border-teal-700 mb-2 pt-3 rounded bg-gray-200 lg:w-1/2 md:w-1/2 xs:w-full">
-                  <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mapel">Masukkan Mata Pelajaran/Pelatihan Anda</label>
+                  <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="mapel">Masukkan Mata Pelajaran/Pelatihan Anda <small class="text-orange-500 hover:text-orange-700"><font-awesome-icon class="text-current" :icon="['fas', 'exclamation-circle']"/> Ketikkan dan tekan ENTER</small></label>
                   <ValidationProvider mode="aggressive" rules="required" v-slot="{ errors }">
                     <span v-if="errors[0]" class="text-red-600 text-sm w-full">&nbsp;&nbsp;&nbsp;{{ errors[0] }}</span>
-                    <v-select tag="input" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }" taggable multiple :map-keydown="mapeluHandlers" v-model="register.mapel_unggulan" placeholder="#Matematika #IPA #IPS #Gitar #Piano #Renang"></v-select>
+                    <v-select tag="input" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }" taggable multiple :map-keydown="mapeluHandlers" v-model="register.mapel_unggulan" placeholder="Matematika | IPA | IPS | Gitar | Piano | Renang"></v-select>
                   </ValidationProvider>
                 </div>
                 <div class="border-r-2 border-teal-700 mb-2 pt-3 rounded bg-gray-200 lg:w-full md:w-full xs:w-full">
                   <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="title">Tuliskan Perkenalan Pendek Anda Pada Siswa <small>(4 -100 Karakter)</small></label>
                   <ValidationProvider mode="aggressive" rules="required|minmax:4,100" v-slot="{ errors }">
                     <span v-if="errors[0]" class="text-red-600 text-sm w-full">&nbsp;&nbsp;&nbsp;{{ errors[0] }}</span>
-                    <input type="text" v-model="register.title" id="title" placeholder="Contoh: (Hai, Saya John Doe, S.Pd. Seorang Guru yang sudah berpengalaman lulusan S1 dari Universitas Pendidikan...)" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 transition duration-500 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }"/>
+                    <input type="text" v-model="register.title" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-teal-700 px-3 pb-3" :class="{ 'border-red-600' : errors[0] }" placeholder="Contoh: (Hai, Saya John Doe, S.Pd. Seorang Guru yang sudah berpengalaman lulusan S1 dari Universitas Pendidikan...)" />
                   </ValidationProvider>
                 </div>
                 <div class="border-r-2 border-teal-700 mb-2 pt-3 rounded bg-gray-200 lg:w-full md:w-full xs:w-full">
@@ -238,7 +238,6 @@
               </tab-content>
             </form-wizard>
         </ValidationObserver>
-        - Upload progress : {{this.progress}}
         <div v-if="loading" class="loading-page">
           <p>Loading...</p>
         </div>

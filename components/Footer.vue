@@ -86,7 +86,7 @@
       </div>
       <div class="my-1 px-1 w-full overflow-hidden xs:my-px xs:px-px xs:w-full sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-full lg:w-full xl:w-full text-center text-white font-normal text-xs border-t-2">
         <img class="mx-auto w-20 mt-2" src="https://dl.dropboxusercontent.com/s/qa3vm8ippsgima5/locmain-bw.png?dl=0">
-        <p>Sincerely, bimbim from Indonesia, BIMBIM © 2021, All Right Reserved</p>
+        <p>Sincerely, BIMBIM from Indonesia, BIMBIM © 2021, All Right Reserved</p>
         <!-- <p class="text-xs">Powered By PT. Makna Jatim Ciber Media</p> -->
       </div>
     </div>

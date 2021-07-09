@@ -17,7 +17,7 @@
           <p class="text-justify md:mt-4"><span class="font-bold">bimbim</span> adalah platform penghubung antara guru pembimbing dan siswa atau orang tua serta untuk memfasilitasi guru honorer, mahasiswa, fresh graduate dan tenaga pendidikan mendapatkan tempat untuk mencari siswa bimbingan secara mudah dan efisien baik akademik maupun non akademik. Melalui <span class="font-bold">bimbim</span> guru/pelatih pembimbing dapat menawarkan jasa bimbinganya. Melalui <span class="font-bold">bimbim</span> siswa/orang tua dapat menemukan pembimbing secara mudah dan berkualitas.</p>
         </div>
       </div>
-      <div class="w-full overflow-hidden xs:w-full sm:w-full md:w-full lg:w-full xl:w-full">
+      <div class="w-full overflow-hidden xs:w-full sm:w-full md:w-full lg:w-full xl:w-full mb-3">
         <VueSlickCarousel v-bind="settings" class="mt-10">
           <div class="bg-white rounded-lg px-2">
             <div class="w-96 border-t-8 border-2 border-teal-700 rounded-lg flex">
@@ -51,9 +51,59 @@
           </div>
         </VueSlickCarousel>
       </div>
+      <div class="w-1/2 overflow-hidden xs:w-full sm:w-full md:w-full lg:w-full xl:w-full">
+        <div class="xs:text-center xs:mt-5 sm:text-center sm:mt-5 md:text-center lg:text-left border-b-2 border-gray-400">
+          <h1 class="text-teal-700">
+            <span class="font-extrabold text-5xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">Supported </span>
+            <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">by :</span>
+          </h1>
+        </div>
+      </div>
+      <div class="w-1/2 overflow-hidden xs:w-full sm:w-full md:w-full lg:w-full xl:w-full">
+        <div class="flex flex-wrap justify-center">
+          <div class="w-40">
+            <img class="grayscale transform hover:scale-125 cursor-pointer" :src="sponsor[0]"/>
+          </div>
+          <div class="w-40">
+            <img class="grayscale transform hover:scale-125 cursor-pointer" :src="sponsor[1]"/>
+          </div>
+          <div class="w-40">
+            <img class="grayscale transform scale-110 hover:scale-150 cursor-pointer" :src="sponsor[2]"/>
+          </div>
+          <div class="w-40">
+            <img class="grayscale transform hover:scale-125 cursor-pointer" :src="sponsor[3]"/>
+          </div>
+          <div class="w-40">
+            <img class="grayscale transform hover:scale-125 cursor-pointer" :src="sponsor[4]"/>
+          </div>
+          <div class="w-40">
+            <img class="grayscale transform hover:scale-125 cursor-pointer" :src="sponsor[5]"/>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<style>
+  img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    /* Firefox 3.5+, IE10 */
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease;
+    /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden;
+    /* Fix for transition flickering */
+  }
+
+  img.grayscale:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+  }
+</style>
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -65,6 +115,15 @@ export default {
   auth: false,
   data() {
     return {
+      sponsor: [
+        'https://dl.dropboxusercontent.com/s/rrzje76xuqipjwz/koma.png?dl=0', //koma
+        'https://dl.dropboxusercontent.com/s/2djodlxaekn72kx/unfold.png?dl=0', //unfold
+        'https://dl.dropboxusercontent.com/s/e4w1seg6s6q8hsy/sengkuni.png?dl=0', //sengkuni
+        'https://dl.dropboxusercontent.com/s/ewxk1y1tp6pgt7m/dessertwidya.png?dl=0', //dessertwidya
+        'https://dl.dropboxusercontent.com/s/dog25sgy05crkmj/maknajatim.png?dl=0', //maknajatim
+        'https://dl.dropboxusercontent.com/s/v48uuj3hcpostw8/fluffiest.png?dl=0', //fluffiest
+
+      ],
       settings: {
         "dots": true,
         "dotsClass": "slick-dots custom-dot-class",
