@@ -52,11 +52,22 @@
             <li v-if="$auth.loggedIn == false"><nuxt-link to="/kontak" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
             <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'phone']"/>
             Kontak</nuxt-link></li>
-            <li v-if="$auth.loggedIn"><nuxt-link to="/bimbingan" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
-            <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'clipboard-list']"/>
-            Bimbingan Saya</nuxt-link></li>
-            <li v-if="$auth.loggedIn"><div @click="notif.jumlah = 0"><nuxt-link to="/notifikasi" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
-            <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'bell']"/> Notifikasi <small v-if="notif.jumlah > 0" class="rounded-full bg-red-500 border-red-200 p-1 text-white font-bold text-xs">{{ notif.jumlah }}</small></nuxt-link></div></li>
+            <li v-if="$auth.loggedIn">
+              <div @click="notif.jml_bimbingan = 0">
+                <nuxt-link to="/bimbingan" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
+                  <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'clipboard-list']"/> Bimbingan Saya
+                  <small v-if="notif.jml_bimbingan > 0" class="rounded-full bg-red-500 border-red-200 p-1 text-white font-bold text-xs">{{ notif.jml_bimbingan }}</small>
+                </nuxt-link>
+              </div>
+            </li>
+            <li v-if="$auth.loggedIn">
+              <div @click="notif.jumlah = 0">
+                <nuxt-link to="/notifikasi" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
+                  <font-awesome-icon class="text-teal-700 focus:text-teal-800 hover:text-teal-400" :icon="['fas', 'bell']"/> Notifikasi
+                  <small v-if="notif.jumlah > 0" class="rounded-full bg-red-500 border-red-200 p-1 text-white font-bold text-xs">{{ notif.jumlah }}</small>
+                </nuxt-link>
+              </div>
+            </li>
             <li v-if="$auth.loggedIn"><nuxt-link to="/profil" class="bg-teal-700 hover:bg-teal-600 px-3 py-2 rounded text-white font-semibold">
             <font-awesome-icon class="text-white" :icon="['fas', 'user']"/> <small>Hai,</small> {{ $auth.user.nama }}</nuxt-link></li>
             <li v-if="$auth.loggedIn"><a href="javascript:void(0)" @click="logout" class="focus:text-teal-800 hover:text-teal-400 text-teal-700">
@@ -175,12 +186,22 @@ export default {
   data() {
     return {
       notif: {
+        jml_bimbingan: 0,
         jumlah: 0
       },
-      isOpen: false
+      isOpen: false,
+      orders: [],
     };
   },
   methods: {
+    async getOrder(){
+      this.orders = await this.$axios.get('/bimapi/api/order/getOrder/'+this.$auth.user.id_pelajar)
+      .then(result => {
+        this.notif.jml_bimbingan = result.data.meta.jmlBimbingan
+      })
+      .catch(error => console.error(error))
+    },
+
     drawer() {
       this.isOpen = !this.isOpen;
     },
@@ -227,6 +248,7 @@ export default {
     document.addEventListener("keydown", e => {
       if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
     });
+    this.getOrder()
   }
 };
 </script>

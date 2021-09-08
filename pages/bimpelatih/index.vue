@@ -63,25 +63,25 @@
 
     <div class="text-left font-sans mx-auto mt-10">
       <h1 class="text-teal-700">
-        <span class="font-extrabold text-5xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">BIM GURU<br></span>
+        <span class="font-extrabold text-5xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">BIM PELATIH<br></span>
         <span class="font-semibold text-4xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">{{ info }}</span>
       </h1>
     </div>
     <div class="bg-teal-700 mt-5 rounded-xl">
       <div class="max-w-7xl mx-auto py-5 px-4 lg:flex lg:items-center lg:justify-between">
         <h2 class="font-extrabold tracking-tight text-white">
-          <span class="block text-xl">Bingung soal harga?</span>
+          <span class="block text-xl">Informasi lebih lanjut?</span>
           <span class="block text-3xl">Cek disini!</span>
         </h2>
         <div class="mt-2 flex lg:mt-0 lg:flex-shrink-0">
-          <div class="inline-flex rounded-md shadow">
+          <!-- <div class="inline-flex rounded-md shadow">
             <a href="#" @click.prevent="show('modal-pricelist')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-teal-900">
               PriceList
             </a>
-          </div>
+          </div> -->
           <div class="ml-3 inline-flex rounded-md shadow">
             <a href="#" @click.prevent="show('modal-detail')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-              Detail Info
+              More Info
             </a>
           </div>
         </div>
@@ -91,7 +91,7 @@
       <template v-slot:mitra="{ mitra }">
         <div class="transform hover:scale-105 w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
           <div class="flex items-end justify-end h-56 w-full bg-center bg-cover" :style="{ backgroundImage: 'url(' + mitra.foto + ')' }">
-              <nuxt-link :to="`bimguru/${mitra.slug}`" class="p-2 rounded-full bg-teal-700 text-white mx-5 w-full -mb-4 hover:bg-teal-500 focus:outline-none focus:bg-teal-500 text-center">
+              <nuxt-link :to="`bimpelatih/${mitra.slug}`" class="p-2 rounded-full bg-teal-700 text-white mx-5 w-full -mb-4 hover:bg-teal-500 focus:outline-none focus:bg-teal-500 text-center">
                   <font-awesome-icon class="text-white" :icon="['fas', 'pencil-alt']"/> Ajukan Bimbingan
               </nuxt-link>
           </div>
@@ -105,7 +105,8 @@
                   #{{ tmp.nama_mapel }}
                 </span>
               </div>
-              <h4 class="text-sm font-base text-teal-700 mt-3"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> {{ mitra.kota }}</h4>
+              <h4 class="text-lg font-base text-teal-700 mt-2"><span class="font-extrabold text-teal-700">Rp.</span> {{ formatPrice(mitra.tarif) }}<small>/sesi</small></h4>
+              <h4 class="text-sm font-base text-teal-700 mt-0"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> {{ mitra.kota }}</h4>
               <p class="text-teal-700 text-justify font-semibold mt-3">
                 {{ mitra.title }}
               </p>
@@ -142,7 +143,7 @@ export default {
       priceIsLoad: false,
       priceOnLoad: false,
       isLoad: true,
-      info: "Guru Privat",
+      info: "Pelatih Privat",
       pendidikan: ['SD', 'SMP', 'SMA-10', 'SMA-11', 'SMA-12'],
       kota: ['Trenggalek', 'Malang', 'Surabaya']
     }
@@ -165,7 +166,7 @@ export default {
   },
   methods: {
     async getMitra(page) {
-      let getGuru = await this.$axios.get(`/bimapi/api/mitra/getGuru?page=${page}`)
+      let getGuru = await this.$axios.get(`/bimapi/api/mitra/getPelatih?page=${page}`)
       .then(result => {
         this.isLoad = true
         this.mitras.push(...result.data.data.data)
@@ -203,7 +204,7 @@ export default {
       }
     },
     formatPrice(value) {
-        let val = (value/1).toFixed(2).replace('.', ',')
+        let val = (value/1).toFixed(0).replace('.', ',')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     },
 

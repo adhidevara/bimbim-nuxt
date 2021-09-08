@@ -328,6 +328,9 @@
                   {{ mitras.kota }}
                 </a>
               </p>
+              <p class="text-gray-500 text-sm">
+                <h4 class="text-lg font-base text-teal-700 mt-2"><span class="font-extrabold text-teal-700">Rp.</span> {{ formatPrice(mitras.tarif) }}<small>/sesi</small></h4>
+              </p>
 
               <div class="mt-2">
                 <span class="mr-1 rounded-full bg-gray-300 p-1 text-teal-700 text-sm" v-for="tmp in tagsMapel" :key="tmp.id_mapel_unggulan">
@@ -401,6 +404,11 @@ export default {
     }
   },
   methods: {
+    formatPrice(value) {
+        let val = (value/1).toFixed(0).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    },
+    
     submitOrder() {
       if (this.order.tgl_bimbingan == null || this.order.waktu_bimbingan == null || this.order.metode_tf == null){
         this.$modal.hide('modal-order')
@@ -448,6 +456,7 @@ export default {
           id_pelajar: this.$auth.user.id_pelajar,
           id_bidang: this.mitras.id_bidang,
           kota: this.mitras.kota,
+          tarif: this.mitras.tarif,
           pendidikan: this.$auth.user.pendidikan,
           tgl_bimbingan: this.order.tgl_bimbingan,
           waktu_bimbingan: this.order.waktu_bimbingan,
@@ -480,7 +489,7 @@ export default {
 
     //API Get Data
     async getMitra() {
-      this.mitras = await this.$axios.get('/bimapi/api/mitra/detailGuru/'+this.$route.params.id)
+      this.mitras = await this.$axios.get('/bimapi/api/mitra/detailPelatih/'+this.$route.params.id)
       .then(result => {
         this.isLoad = true
         this.yellowStars = Math.floor(result.data.meta.rate)
