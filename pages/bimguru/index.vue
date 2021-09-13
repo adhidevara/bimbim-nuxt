@@ -144,7 +144,7 @@ export default {
       isLoad: true,
       info: "Guru Privat",
       pendidikan: ['SD', 'SMP', 'SMA-10', 'SMA-11', 'SMA-12'],
-      kota: ['Trenggalek', 'Malang', 'Surabaya']
+      kota: ['Kabupaten Trenggalek', 'Kota Malang', 'Kabupaten Malang', 'Kota Surabaya']
     }
   },
   head() {
