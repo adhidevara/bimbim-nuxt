@@ -12,6 +12,7 @@
           <h1 class="font-bold text-2xl md:mb-2">Menu</h1>
           <nuxt-link class="hover:text-teal-400" to="/produk">Produk</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/tentangkami">Tentang Kami</nuxt-link>
+          <nuxt-link class="hover:text-teal-400" to="/faq">FAQ</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/mitra">Kemitraan</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/privasi">Kebijakan Privasi</nuxt-link>
           <nuxt-link class="hover:text-teal-400" to="/mou-kemitraan">Syarat & Ketentuan Kemitraan</nuxt-link>
